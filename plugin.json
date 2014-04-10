@@ -1,0 +1,15 @@
+{
+    "id": "nodebb-plugin-starwars",
+    "name": "Star wars openning animation plugin",
+    "description": "A plugin to scroll up the text like a starwars openning theme",
+    "url": "Absolute URL to your plugin or a Github repository",
+    "library": "./library.js",
+    "staticDir": "/assets",
+    "less": [],
+    "hooks": [
+        { "hook": "filter:post.parse", "method": "parse", "callbacked": true, "priority": 6 }
+    ],
+    "css": [
+        "style.css"
+    ]
+}

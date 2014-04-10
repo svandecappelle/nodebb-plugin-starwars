@@ -1,0 +1,33 @@
+{
+  "name": "nodebb-plugin-starwars",
+  "version": "0.0.1",
+  "description": "NodeBB Starwars Plugin",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psychobunny/nodebb-plugin-youtube"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "youtube",
+    "video",
+    "embed"
+  ],
+  "author": {
+    "name": "svandecappelle",
+    "email": "steeve.vandecappelle@gmail.com"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/psychobunny/nodebb-plugin-youtube/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "_id": "nodebb-starwars-plugin@0.0.1",
+  "_from": "nodebb-starwars-plugin@",
+  "homepage": "https://github.com/psychobunny/nodebb-plugin-youtube"
+}
