@@ -42,12 +42,14 @@
   color: #4bd5ee;
   opacity: 0;
   animation: intro 6s ease-out 1s;
+  -webkit-animation: intro 6s ease-out 1s;
 }
 .starwars .logo {
   width: 18em;
   margin: -9em 0 0 -9em;
   opacity: 0;
   animation: logo 9s ease-out 9s;
+  -webkit-animation: logo 9s ease-out 9s;
 }
 .starwars .logo svg {
   width: inherit;
@@ -71,6 +73,7 @@
   position: absolute;
   top: 100%;
   animation: titles 81s linear 13s infinite;
+  -webkit-animation: titles 81s linear 13s infinite;
 }
 .starwars .titles > div > p {
   margin: 1.35em 0 1.85em 0;
@@ -97,6 +100,24 @@
     opacity: 0;
   }
 }
+@-webkit-keyframes intro{
+    0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes logo {
   0% {
     -moz-transform: scale(2.75);
@@ -118,7 +139,46 @@
     opacity: 0;
   }
 }
+
+@-webkit-keyframes logo {
+  0% {
+    -moz-transform: scale(2.75);
+    -ms-transform: scale(2.75);
+    -webkit-transform: scale(2.75);
+    transform: scale(2.75);
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+
 @keyframes titles {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 20%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes titles {
   0% {
     top: 100%;
     opacity: 1;
