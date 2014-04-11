@@ -11,11 +11,36 @@
   
   Starwars.parse = function(postContent, callback) {
 
-    // modified from http://stackoverflow.com/questions/7168987/
+    var patternCheck = /\[starwars title=(.+);color-title=(.+);color=(.+)\]/g;
+
     var pattern = /\[starwars title=(.+);color-title=(.+);color=(.+)\](.+)\[\/starwars\]/g;
-    
-    postContent = postContent.replace(pattern, embed);
-    
+    var carriageRtn = /[\n\r]/g;
+
+    var def = /\[starwars title=(.+);color-title=(.+);color=(.+)\](.+)/g;
+    if(postContent.match(patternCheck)){
+      var arguemnts = postContent.split(def);
+      
+      var title = arguemnts[1];
+      var titleColor = arguemnts[2];
+      var contentColor = arguemnts[3];
+      var content = '';
+      
+      for (var i = 4; i<arguemnts.length; i+=1){
+        if(arguemnts[i].lastIndexOf("[/starwars]")==-1){
+          content = content + arguemnts[i].replace(carriageRtn,'');
+        }else{
+          content = content + arguemnts[i].replace("[/starwars]", '').replace(carriageRtn,'');
+        }
+      }
+      
+      var newContent = "[starwars title=$1;color-title=$2;color=$3\]$4\[\/starwars\]"
+      newContent = newContent.replace("$1", title);
+      newContent = newContent.replace("$2", titleColor);
+      newContent = newContent.replace("$3", contentColor);
+      newContent = newContent.replace("$4", content);
+      
+      postContent = newContent.replace(pattern, embed);
+    }
     callback(null, postContent);
   };
 
